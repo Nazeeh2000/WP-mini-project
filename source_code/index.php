@@ -13,6 +13,7 @@
     <title>Learnacademy</title>
   </head>
   <body>
+    <?php require_once 'process.php'; ?> 
     <div class="p-4">
       <div class="d-flex flex-row align-items-center">
         <div>
@@ -307,6 +308,84 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Upload new video -->
+      <div
+        class="font-weight-bold"
+        style="
+          font-size: larger;
+          display: block;
+          margin-top: 4vh;
+          text-align: center;
+          margin-bottom: 2vh;
+        "
+      >
+        Upload new video
+      </div>
+      <div class="row justify-content-center">
+        <form action="process.php" method="POST">
+          <div class="form-group">
+            <label>Course Name</label>
+            <input
+              type="text"
+              name="course_name"
+              class="form-control"
+              placeholder="Enter Course name"
+              value=""
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Course Description</label>
+            <input
+              type="text"
+              name="description"
+              class="form-control"
+              placeholder="Enter Course Description"
+              value=""
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Course Duration</label>
+            <input
+              type="number"
+              name="duration"
+              class="form-control"
+              placeholder="Enter Course duration"
+              value=""
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Course Thumbnail</label>
+            <input
+              type="file"
+              name="thumbnail"
+              class="form-control"
+              placeholder="Add thumbnail"
+              value=""
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Video link</label>
+            <input
+              type="url"
+              name="video_link"
+              class="form-control"
+              placeholder="Add video link"
+              value=""
+            />
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary" name="save">
+              Save
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </body>
