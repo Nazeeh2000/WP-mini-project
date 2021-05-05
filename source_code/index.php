@@ -67,20 +67,19 @@
               while($images=$result->fetch_assoc()):
            ?>
           <div
-            class="col-3 mt-2 mr-2 ml-2 border rounded border-secondary"
+            class="col-3 mt-2 mr-2 ml-2 border rounded border-secondary d-flex flex-row"
             style="height: 20vh; padding: 0; width: 33vw;"
           >
           
-            <!-- <div class="d-flex flex-row" style="width: 100%"> -->
-            <div class="col-sm" style="width: 100%; display: inline-block;">
-              <div style="width: 40%">
+            <div class="col-sm d-flex" style="width: 100%; ">
+              <div style="width: 40%; display: inline-block">
                 <img
                 style="width: 95%; height: 19.7vh"
-                  src=<?php echo $images['thumbnail'] ?>
+                  src=./public/<?php echo $images['thumbnail'] ?>
                   alt=<?php echo $images['course_name']; ?>
                 />
               </div>
-              <div style="width: 60%; height: max-content; margin-top: 1vh">
+              <div style="width: 60%; height: max-content; margin-top: 1vh; ">
                 <p
                   class="font-weight-bold"
                   style="font-size: large; cursor: pointer"
@@ -91,7 +90,6 @@
                 <div>Duration: <?php echo $images['duration']; ?></div>
               </div>
             </div>
-            
           </div>
        <?php endwhile; ?>
         </div>
