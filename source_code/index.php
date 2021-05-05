@@ -14,6 +14,19 @@
   </head>
   <body>
     <?php require_once 'process.php'; ?> 
+
+    <?php
+      $mysqli = new mysqli('localhost', 'root', '', 'learnacademy') or die(mysqli_error($mysqli));
+      $result = $mysqli->query("SELECT * FROM courses") or die($mysqli->error);
+      // pre_r($result);
+      // pre_r($result->fetch_assoc());
+
+      function pre_r($array) {
+        echo '<pre>';
+        print_r($array);
+        echo '</pre>';
+      }
+     ?>
     <div class="p-4">
       <div class="d-flex flex-row align-items-center">
         <div>
@@ -47,8 +60,95 @@
         </div>
         <!-- <div style="font-size: large;">My learning</div> -->
       </div>
-
+      
       <div class="container mt-4">
+        <div class="row">
+        <?php
+              while($images=$result->fetch_assoc()):
+           ?>
+          <div
+            class="col mr-2 ml-2 border rounded border-secondary"
+            style="height: 20vh; padding: 0;"
+          >
+          
+            <!-- <div class="d-flex flex-row" style="width: 100%"> -->
+            <div class="col-sm" style="width: 100%">
+              <div style="width: 40%">
+                <img
+                style="width: 95%; height: 19.7vh"
+                  src=<?php echo $images['thumbnail'] ?>
+                  alt=<?php echo $images['course_name']; ?>
+                />
+              </div>
+              <div style="width: 60%; height: max-content; margin-top: 1vh">
+                <p
+                  class="font-weight-bold"
+                  style="font-size: large; cursor: pointer"
+                >
+                <?php echo $images['course_name']; ?>
+                </p>
+                <div><?php echo $images['description']; ?></div>
+                <div>Duration: <?php echo $images['duration']; ?></div>
+              </div>
+            </div>
+            
+          </div>
+      <?php endwhile; ?>
+
+
+          <!-- <div
+            class="col mr-2 ml-2 border rounded border-secondary"
+            style="height: 20vh; padding: 0"
+          >
+            <div class="d-flex flex-row" style="width: 100%">
+              <div style="width: 40%">
+                <img
+                style="width: 95%; height: 19.7vh"
+                  src="./public/go.png"
+                  alt="go"
+                />
+              </div>
+              <div style="width: 60%; height: max-content; margin-top: 1vh">
+                <p
+                  class="font-weight-bold"
+                  style="font-size: large; cursor: pointer"
+                >
+                  Go programming language
+                </p>
+                <div>Learn Go from complete scratch</div>
+                <div>Duration: 16 hours</div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col mr-2 ml-2 border rounded border-secondary"
+            style="height: 20vh; padding: 0"
+          >
+            <div class="d-flex flex-row" style="width: 100%">
+              <div style="width: 40%">
+                <img
+                  style="width: 95%; height: 19.7vh"
+                  src="./public/c_sharp.png"
+                  alt="c#"
+                />
+              </div>
+              <div style="width: 60%; height: max-content; margin-top: 1vh">
+                <p
+                  class="font-weight-bold"
+                  style="font-size: large; cursor: pointer"
+                >
+                  C#
+                </p>
+                <div>Learn C# from complete scratch</div>
+                <div>Duration: 29 hours</div>
+              </div>
+            </div>
+          </div>-->
+        </div>
+      </div> 
+
+      <!-- <div class="container mt-4">
         <div class="row">
           <div
             class="col mr-2 ml-2 border rounded border-secondary"
@@ -125,21 +225,20 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
 
       <!-- explore new courses -->
-      <div
+      <!-- <div
         class="d-flex justify-content-between mt-4 mb-2"
         style="padding-left: 6vw; padding-right: 5vw"
       >
         <div class="font-weight-bold" style="font-size: larger">
           Explore new courses
         </div>
-        <!-- <div style="font-size: large;">My learning</div> -->
-      </div>
+      </div> -->
 
-      <div class="container mt-4">
+      <!-- <div class="container mt-4">
         <div class="row">
           <div
             class="col mr-2 ml-2 border rounded border-secondary"
@@ -216,22 +315,21 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       
       <!-- Top courses -->
 
-      <div
+      <!-- <div
         class="d-flex justify-content-between mt-4 mb-2"
         style="padding-left: 6vw; padding-right: 5vw"
       >
         <div class="font-weight-bold" style="font-size: larger">
           Top courses
         </div>
-        <!-- <div style="font-size: large;">My learning</div> -->
-      </div>
+      </div> -->
 
-      <div class="container mt-4">
+      <!-- <div class="container mt-4">
         <div class="row">
           <div
             class="col mr-2 ml-2 border rounded border-secondary"
@@ -308,10 +406,10 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Upload new video -->
-      <div
+      <p
         class="font-weight-bold"
         style="
           font-size: larger;
@@ -322,7 +420,7 @@
         "
       >
         Upload new video
-      </div>
+              </p>
       <div class="row justify-content-center">
         <form action="process.php" method="POST">
           <div class="form-group">
