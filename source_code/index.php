@@ -11,6 +11,12 @@
       crossorigin="anonymous"
     />
     <title>Learnacademy</title>
+
+    <style>
+    .underline-on-hover:hover {
+      text-decoration: underline;
+    }
+  </style>
   </head>
   <body>
     <?php require_once 'process.php'; ?> 
@@ -48,17 +54,17 @@
 
       <div style="background-color: #9ede73; height: 40vh; width: 100%;  padding: 8vh;" class="container mt-3">
         <p style="font-size: xxx-large; font-weight: bold;">Start learning with us!</p>
-        <p style="font-size: x-large; font-weight: 600;">and upgrade yourself by learning new and exciting stuffs</p>
+        <p style="font-size: x-large; font-weight: 600;">and upgrade yourself by learning new and exciting things</p>
       </div>
       <!-- lets start learning -->
-      <div
+      <!-- <div
         class="d-flex justify-content-between mt-4 mb-2"
         style="padding-left: 6vw; padding-right: 5vw"
       >
-        <div class="font-weight-bold" style="font-size: larger">
+        <h1 class="font-weight-bold" style="font-size: 80px">
           Start learning now
-        </div>
-      </div>
+        </h1>
+      </div> -->
       
         <div class=" mt-4">
         <div style="margin: auto; justify-content: center;" class="row w-33">
@@ -81,7 +87,7 @@
               </div>
               <div style="width: 100%; height: max-content; margin-top: 1vh; ">
                 <p
-                  class="font-weight-bold"
+                  class="font-weight-bold underline-on-hover"
                   style="font-size: large; cursor: pointer"
                 >
                 <?php echo $images['course_name']; ?>
@@ -99,84 +105,6 @@
        <?php endwhile; ?>
         </div>
       </div> 
-
-      <!-- Upload new video -->
-      <p
-        class="font-weight-bold"
-        style="
-          font-size: larger;
-          display: block;
-          margin-top: 4vh;
-          text-align: center;
-          margin-bottom: 2vh;
-        "
-      >
-        Upload new video
-              </p>
-      <div class="row justify-content-center">
-        <form action="process.php" method="POST">
-          <div class="form-group">
-            <label>Course Name</label>
-            <input
-              type="text"
-              name="course_name"
-              class="form-control"
-              placeholder="Enter Course name"
-              value=""
-            />
-          </div>
-
-          <div class="form-group">
-            <label>Course Description</label>
-            <input
-              type="text"
-              name="description"
-              class="form-control"
-              placeholder="Enter Course Description"
-              value=""
-            />
-          </div>
-
-          <div class="form-group">
-            <label>Course Duration</label>
-            <input
-              type="number"
-              name="duration"
-              class="form-control"
-              placeholder="Enter Course duration"
-              value=""
-            />
-          </div>
-
-          <!-- <div class="form-group">
-            <label>Course Thumbnail</label>
-            <input
-              type="file"
-              name="thumbnail"
-              class="form-control"
-              placeholder="Add thumbnail"
-              value=""
-            />
-          </div> -->
-
-          <div class="form-group">
-            <label>Video link</label>
-            <input
-              type="url"
-              name="video_link"
-              class="form-control"
-              placeholder="Add video link"
-              value=""
-            />
-          </div>
-
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary" name="save">
-              Save
-            </button>
-          </div>
-        </form>
-      </div>
     </div>
     <script>
       function redirectToCourse(courseId) {
