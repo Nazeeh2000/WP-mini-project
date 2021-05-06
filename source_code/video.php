@@ -45,7 +45,7 @@
   $video_id = $my_array_of_vars['v'];
   // echo $video_id;
 
-  $embed_src = "https://youtube.com/embed/" . $video_id;
+  $embed_src = "https://youtube.com/embed/" . $video_id . "?autoplay=1";
 
   $title = $res["course_name"];
   $desc = $res["description"];
@@ -69,8 +69,8 @@
   </div>
   <div class="row" style="gap: 20px">
     <div class="col-7">
-      <div style="padding: 20px; text-align: left; width: 100%">
-        <iframe width="1000" height="600" src="<?php echo $embed_src ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div style="padding: 40px; padding-top:0; text-align: left; width: 100%">
+        <iframe width="1050" height="600" src="<?php echo $embed_src ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <h3 style="margin-top: 20px">
           <?php echo $title ?>
         </h3>
@@ -108,6 +108,7 @@
               </p>
           </div>
         </div>
+        <hr />
       <?php endforeach; ?>
     </div>
   </div>

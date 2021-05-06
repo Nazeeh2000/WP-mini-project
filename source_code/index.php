@@ -56,9 +56,8 @@
         style="padding-left: 6vw; padding-right: 5vw"
       >
         <div class="font-weight-bold" style="font-size: larger">
-          Lets start learning
+          Start learning now
         </div>
-        <div style="font-size: large;">My learning</div>
       </div>
       
         <div class=" mt-4">
