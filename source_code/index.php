@@ -115,7 +115,7 @@
         Upload new video
               </p>
       <div class="row justify-content-center">
-        <form action="process.php" method="POST" enctype="multipart/form-data">
+        <form action="process.php" method="POST">
           <div class="form-group">
             <label>Course Name</label>
             <input
