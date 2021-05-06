@@ -98,7 +98,6 @@
                     echo '...';
                   }
                  ?></div>
-                <div>Duration: <?php echo $images['duration']." mins"; ?></div>
               </div>
             </div>
           </div>

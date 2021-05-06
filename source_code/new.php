@@ -16,20 +16,15 @@
     <?php require_once 'process.php'; ?> 
     <div class="p-4">
       <div class="d-flex flex-row align-items-center">
-        <div>
-          <img style="width: 100px" src="./public/logo.png" alt="logo" />
+        <div style="cursor: pointer;" onclick="redirectToHome()">
+          <img style="width: 100px;" src="./public/logo.png" alt="logo" />
         </div>
-        <div class="font-weight-bold" style="font-size: larger">
+        <div style="cursor: pointer;" onclick="redirectToHome()" class="font-weight-bold" style="font-size: larger">
           LearnAcademy
         </div>
 
         <div class="ml-4 mr-2" style="color: gray">Search</div>
-        <input
-          class="rounded-pill border border-dark pt-2 pb-2 pl-3 pr-3"
-          style="width: 65vw; height: 40px; outline: none"
-          type="text"
-          placeholder="Search by catgeories"
-        />
+        <input class="rounded-pill border border-dark pt-2 pb-2 pl-3 pr-3" style="width: 65vw; height: 40px; outline: none" type="text" placeholder="Search by catgeories" />
       </div>
 
       <!-- Upload new video -->
@@ -43,7 +38,7 @@
           margin-bottom: 2vh;
         "
       >
-        Upload new video
+        Add new video
               </p>
       <div class="row justify-content-center">
         <form style="width:40vw;" action="process.php" method="POST">
@@ -69,7 +64,7 @@
             ></textarea>
           </div>
 
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label>Course Duration</label>
             <input
               type="number"
@@ -78,7 +73,7 @@
               placeholder="Enter Course duration"
               value=""
             />
-          </div>
+          </div> -->
 
           <!-- <div class="form-group">
             <label>Course Thumbnail</label>
@@ -110,5 +105,10 @@
         </form>
       </div>
     </div>
+    <script>
+    function redirectToHome() {
+      window.open("http://localhost/learnacademy/source_code/index.php", "_self");
+    }
+  </script>
   </body>
 </html>

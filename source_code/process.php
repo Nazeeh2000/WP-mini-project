@@ -24,7 +24,7 @@ if (isset($_POST['save'])) {
 
   $course_name = $_POST['course_name'];
   $description = $_POST['description'];
-  $duration = $_POST['duration'];
+  $duration = 200;
   // $thumbnail = $_POST['thumbnail'];
   $video_link = $_POST['video_link'];
 

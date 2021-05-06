@@ -53,6 +53,8 @@
   // Fetch the rest of the videos
   $vids_query = $mysqli->query("SELECT * FROM courses WHERE course_id<>$course_id") or die($mysqli->error);
   $vids = $vids_query->fetch_all();
+
+  shuffle($vids);
   ?>
   <div class="p-4">
     <div class="d-flex flex-row align-items-center">
