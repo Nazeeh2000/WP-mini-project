@@ -46,7 +46,7 @@
       </div>
 
       <div class="ml-4 mr-2" style="color: gray">Search</div>
-      <input id="searchbar" class="rounded-pill border border-dark pt-2 pb-2 pl-3 pr-3" style="width: 65vw; height: 40px; outline: none" type="text" placeholder="Search by catgeories" />
+      <input id="searchbar" class="rounded-pill border border-dark pt-2 pb-2 pl-3 pr-3" style="width: 65vw; height: 40px; outline: none" type="text" placeholder="Type keywords and press Enter" />
     </div>
 
     <div class="col" style="margin-top: 40px;">
