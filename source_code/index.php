@@ -68,19 +68,19 @@
            ?>
           <div
             class="col-3 mt-2 mr-2 ml-2 border rounded border-secondary d-flex flex-row"
-            style="height: 25vh; padding: 0; width: 33vw; cursor: pointer;"
+            style="height: fit-content; padding: 20px; width: 33vw; cursor: pointer;"
             onclick="redirectToCourse(<?php echo $images['course_id'] ?>)"
           >
           
-            <div class="col-sm d-flex" style="width: 100%; ">
-              <div style="width: 40%; display: inline-block">
+            <div class="col-sm" style="width: 100%; ">
+              <div style="width: 100%; display: inline-block; margin-right: 30px">
                 <img
-                style="width: 95%; height: 19.7vh"
-                  src=./public/<?php echo $images['thumbnail'] ?>
+                style="width: 100%; height: auto"
+                  src=<?php echo "http://img.youtube.com/vi/".$images['video_id']."/mqdefault.jpg" ?>
                   alt=<?php echo $images['course_name']; ?>
                 />
               </div>
-              <div style="width: 60%; height: max-content; margin-top: 1vh; ">
+              <div style="width: 100%; height: max-content; margin-top: 1vh; ">
                 <p
                   class="font-weight-bold"
                   style="font-size: large; cursor: pointer"
@@ -149,7 +149,7 @@
             />
           </div>
 
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label>Course Thumbnail</label>
             <input
               type="file"
@@ -158,7 +158,7 @@
               placeholder="Add thumbnail"
               value=""
             />
-          </div>
+          </div> -->
 
           <div class="form-group">
             <label>Video link</label>

@@ -93,7 +93,8 @@
       ?>
         <div class="row" style="margin-bottom: 20px;">
           <div onclick="redirectToCourse(<?php echo $item[5] ?>)" style="width:100px;" class="col-3">
-            <img class="rounded" style="width: 100%;cursor:pointer;" src="public/ver.jpg" />
+            <img class="rounded" style="width: 100%;cursor:pointer;"
+            src=<?php echo "http://img.youtube.com/vi/".$item[4]."/mqdefault.jpg" ?> />
           </div>
           <div class="col-8">
             <h5 class="underline-on-hover" onclick="redirectToCourse(<?php echo $item[5] ?>)" style="cursor:pointer"><?php echo $item[0] ?></h1>
