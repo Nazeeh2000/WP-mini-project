@@ -68,7 +68,8 @@
            ?>
           <div
             class="col-3 mt-2 mr-2 ml-2 border rounded border-secondary d-flex flex-row"
-            style="height: 20vh; padding: 0; width: 33vw;"
+            style="height: 25vh; padding: 0; width: 33vw; cursor: pointer;"
+            onclick="redirectToCourse(<?php echo $images['course_id'] ?>)"
           >
           
             <div class="col-sm d-flex" style="width: 100%; ">
@@ -86,8 +87,13 @@
                 >
                 <?php echo $images['course_name']; ?>
                 </p>
-                <div><?php echo $images['description']; ?></div>
-                <div>Duration: <?php echo $images['duration']; ?></div>
+                <div>
+                <?php echo substr($images['description'], 0, 100);
+                  if (strlen($images['description']) > 100) {
+                    echo '...';
+                  }
+                 ?></div>
+                <div>Duration: <?php echo $images['duration']." mins"; ?></div>
               </div>
             </div>
           </div>
@@ -109,7 +115,7 @@
         Upload new video
               </p>
       <div class="row justify-content-center">
-        <form action="process.php" method="POST">
+        <form action="process.php" method="POST" enctype="multipart/form-data">
           <div class="form-group">
             <label>Course Name</label>
             <input
@@ -173,5 +179,10 @@
         </form>
       </div>
     </div>
+    <script>
+      function redirectToCourse(courseId) {
+        window.open(`http://localhost/learnacademy/source_code/video.php?id=${courseId}`, "_self");
+      }
+    </script>
   </body>
 </html>
