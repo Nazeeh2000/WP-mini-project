@@ -7,6 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <title>Learnacademy</title>
+
+  <style>
+    .underline-on-hover:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
@@ -50,10 +56,10 @@
   ?>
   <div class="p-4">
     <div class="d-flex flex-row align-items-center">
-      <div>
-        <img style="width: 100px" src="./public/logo.png" alt="logo" />
+      <div style="cursor: pointer;" onclick="redirectToHome()">
+        <img style="width: 100px;" src="./public/logo.png" alt="logo" />
       </div>
-      <div class="font-weight-bold" style="font-size: larger">
+      <div style="cursor: pointer;" onclick="redirectToHome()" class="font-weight-bold" style="font-size: larger">
         LearnAcademy
       </div>
 
@@ -62,9 +68,9 @@
     </div>
   </div>
   <div class="row" style="gap: 20px">
-    <div class="col">
+    <div class="col-7">
       <div style="padding: 20px; text-align: left; width: 100%">
-        <iframe width="800" height="400" src="<?php echo $embed_src ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="1000" height="600" src="<?php echo $embed_src ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <h3 style="margin-top: 20px">
           <?php echo $title ?>
         </h3>
@@ -85,12 +91,12 @@
       <?php
       foreach ($vids as $item) :
       ?>
-        <div onclick="redirectToCourse(<?php echo $item[5] ?>)" class="row" style="margin-bottom: 20px;">
-          <div style="width:100px;" class="col-3">
+        <div class="row" style="margin-bottom: 20px;">
+          <div onclick="redirectToCourse(<?php echo $item[5] ?>)" style="width:100px;" class="col-3">
             <img class="rounded" style="width: 100%;cursor:pointer;" src="public/ver.jpg" />
           </div>
           <div class="col-8">
-            <h5><?php echo $item[0] ?></h1>
+            <h5 class="underline-on-hover" onclick="redirectToCourse(<?php echo $item[5] ?>)" style="cursor:pointer"><?php echo $item[0] ?></h1>
               <p>
                 <?php
                 echo substr($item[1], 0, 200);
@@ -105,6 +111,10 @@
     </div>
   </div>
   <script>
+    function redirectToHome() {
+      window.open("http://localhost/learnacademy/source_code/index.php", "_self");
+    }
+
     function redirectToCourse(courseId) {
       window.open(`http://localhost/learnacademy/source_code/video.php?id=${courseId}`, "_self");
     }
